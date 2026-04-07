@@ -12,7 +12,8 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[80px] -z-10"
+        style={{ willChange: 'opacity', transform: 'translateZ(0) translateX(-50%)' }}
       />
 
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">

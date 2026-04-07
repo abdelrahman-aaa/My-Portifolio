@@ -71,7 +71,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-12 backdrop-blur-md bg-background/50 border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-12 bg-background/80 border-b border-border/50" style={{ willChange: 'transform', transform: 'translateZ(0)' }}>
       <div className="max-w-7xl mx-auto flex items-center justify-between relative">
         {/* Logo */}
         <Link
@@ -205,7 +205,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-[calc(100%+1rem)] left-4 right-4 p-4 bg-background/95 backdrop-blur-2xl border border-border/50 rounded-2xl shadow-2xl md:hidden overflow-hidden"
+            className="absolute top-[calc(100%+1rem)] left-4 right-4 p-4 bg-background/98 backdrop-blur-sm border border-border/50 rounded-2xl shadow-2xl md:hidden overflow-hidden"
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (

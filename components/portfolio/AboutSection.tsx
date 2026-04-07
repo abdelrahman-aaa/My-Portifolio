@@ -11,13 +11,14 @@ const AboutSection = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center"
+        style={{ willChange: 'opacity, transform' }}
       >
         {/* Left: Decorative Elements */}
         <div className="w-full lg:w-1/2 relative aspect-square max-w-md">
-          <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-transparent rounded-full blur-[80px] -z-10" />
-          <div className="w-full h-full border border-white/10 rounded-3xl bg-white/5 backdrop-blur-sm overflow-hidden relative flex items-center justify-center p-6 md:p-8">
+          <div className="absolute inset-0 bg-linear-to-br from-primary/15 to-transparent rounded-full blur-3xl -z-10" style={{ willChange: 'transform', transform: 'translateZ(0)' }} />
+          <div className="w-full h-full border border-white/10 rounded-3xl bg-white/5 overflow-hidden relative flex items-center justify-center p-6 md:p-8">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] z-0" />
 
             {/* Profile Image container */}
@@ -31,7 +32,7 @@ const AboutSection = () => {
               />
             </div>
 
-            <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20 font-mono text-[10px] tracking-widest text-white/70 uppercase bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10 shadow-lg">
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20 font-mono text-[10px] tracking-widest text-white/70 uppercase bg-black/60 px-3 py-1.5 rounded-full border border-white/10 shadow-lg">
               Profile / Identity
             </div>
           </div>
@@ -82,7 +83,8 @@ const AboutSection = () => {
               target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary/10 border border-primary/20 text-primary font-bold rounded-lg hover:bg-primary/20 transition-all shadow-lg shadow-primary/5"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary/10 border border-primary/20 text-primary font-bold rounded-lg hover:bg-primary/20 transition-[background-color,border-color,box-shadow] duration-200 shadow-lg shadow-primary/5"
+            style={{ willChange: 'transform' }}
             >
               <Download className="w-5 h-5" />
               Download My Resume

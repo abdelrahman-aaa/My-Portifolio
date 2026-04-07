@@ -71,8 +71,9 @@ const TechStack = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
+      style={{ willChange: 'opacity, transform' }}
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div className="space-y-4">
@@ -95,6 +96,8 @@ const TechStack = () => {
           <motion.div
             key={category.title}
             whileHover={{ y: -5 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            style={{ willChange: 'transform' }}
             className={`
               relative p-8 rounded-2xl transition-colors duration-300 flex flex-col
               ${

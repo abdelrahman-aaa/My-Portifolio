@@ -45,8 +45,9 @@ const ProjectPreview = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
       className="py-24 px-6 md:px-12 max-w-7xl mx-auto"
+      style={{ willChange: 'opacity, transform' }}
     >
       {/* Section Header */}
       <div className="flex flex-col items-start mb-16 space-y-4">
@@ -68,9 +69,10 @@ const ProjectPreview = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.02, y: -5 }}
-            transition={{ duration: 0.3 }}
-            className="group relative flex flex-col bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:bg-white/2 hover:border-primary/30 hover:shadow-[0_15px_40px_oklch(0.8_0.15_190/0.15)] cursor-pointer"
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="group relative flex flex-col bg-background/60 border border-border/50 rounded-2xl overflow-hidden hover:bg-white/5 hover:border-primary/30 hover:shadow-[0_15px_40px_oklch(0.8_0.15_190/0.12)] cursor-pointer"
+            style={{ willChange: 'transform' }}
           >
             {/* Image Placeholder */}
             <div className="relative aspect-16/10 w-full overflow-hidden bg-black/50 border-b border-white/5">

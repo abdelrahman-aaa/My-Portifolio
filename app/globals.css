@@ -77,6 +77,40 @@
   body {
     @apply bg-background text-foreground selection:bg-primary/30 antialiased overflow-x-hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    /* Eliminate 300ms touch delay and enable native momentum scroll */
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Promote fixed navbar to its own composite layer to prevent scroll repaints */
+  nav[class*="fixed"] {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* ─── Mobile: disable all heavy GPU effects on touch devices ─── */
+@media (hover: none) and (pointer: coarse) {
+  /* Kill ALL backdrop-blur on mobile — single biggest perf win */
+  [class*="backdrop-blur"],
+  [style*="backdrop-filter"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Kill large blur orbs on mobile */
+  [class*="blur-"] {
+    filter: none !important;
+  }
+
+  /* Disable image scale-on-hover (pointless on touch and causes repaints) */
+  .group:hover img,
+  img[class*="hover:scale"] {
+    transform: none !important;
+  }
+
+  /* Disable box-shadow animations on mobile cards */
+  [class*="hover:shadow"] {
+    box-shadow: none !important;
   }
 }
 
@@ -91,5 +125,11 @@
 
   .cyan-gradient {
     background: linear-gradient(135deg, oklch(0.85 0.15 190) 0%, oklch(0.65 0.2 200) 100%);
+  }
+
+  /* GPU layer for animated/blurred elements */
+  .gpu-layer {
+    will-change: transform;
+    transform: translateZ(0);
   }
 }
