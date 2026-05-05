@@ -8,7 +8,7 @@ import Footer from "@/components/portfolio/Footer";
 
 export default function Page() {
   return (
-    <main className="min-h-screen flex flex-col bg-background relative overflow-x-hidden">
+    <main className="min-h-screen flex flex-col bg-background relative">
       <Navbar />
       <HeroSection />
       <AboutSection />
