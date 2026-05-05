@@ -21,7 +21,7 @@ const projects = [
     slug: "Plus-CRM",
     description:
       "Modern CRM dashboard for managing leads, deals, and customers with interactive analytics and clean UI. Built with Next.js and Redux Toolkit.",
-    tags: ["Next.js", "Redux Toolkit", "Tailwind CSS"],
+    tags: ["Next.js","TypeScript","DND kit", "Redux Toolkit", "Tailwind CSS"],
     liveDemo: "https://plus-crm-phi.vercel.app/",
     github: "https://github.com/abdelrahman-aaa/Plus-crm",
     image: "/crm1.png",
